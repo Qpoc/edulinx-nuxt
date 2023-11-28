@@ -13,7 +13,11 @@
             <SignupForm @login="isLogin = true; isSignUp = false" />
         </Dialog>
         <div class="flex align-items-center">
-            <Image src="/_nuxt/assets/logo/logo-abbreviate.png" alt="Edulinx" width="100" />
+            <Image alt="Edulinx" width="100">
+                <template #image>
+                    <img src="~/assets/logo/logo-abbreviate.png" contain />
+                </template>
+            </Image>
             <a v-ripple class="text-primary font-bold text-3xl hidden lg:flex">Edulinx</a>
         </div>
 

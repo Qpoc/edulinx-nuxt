@@ -82,7 +82,7 @@ watch(() => props.visible, (value) => {
     width: 100%;
 }
 
-.p-chips.p-component.p-inputwrapper>>>ul {
+.p-chips.p-component.p-inputwrapper:deep(ul) {
     width: 100% !important;
 }
 </style>

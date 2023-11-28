@@ -13,9 +13,9 @@
             <SignupForm @login="isLogin = true; isSignUp = false" />
         </Dialog>
         <div class="flex align-items-center">
-            <Image alt="Edulinx" width="100">
+            <Image alt="Edulinx">
                 <template #image>
-                    <img src="~/assets/logo/logo-abbreviate.png" contain />
+                    <img src="~/assets/logo/logo-abbreviate.png" contain style="max-width: 100px;"/>
                 </template>
             </Image>
             <a v-ripple class="text-primary font-bold text-3xl hidden lg:flex">Edulinx</a>

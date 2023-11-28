@@ -61,6 +61,7 @@ const { $api, $viewport } = useNuxtApp();
 const offsetLeft = useCookie('offsetLeft');
 const offsetTop = useCookie('offsetTop');
 const offsetHeight = useCookie('offsetHeight');
+const token = useCookie('token');
 const authStore = useAuthUserStore();
 const isLogin = ref(false);
 const isSignUp = ref(false);
@@ -95,6 +96,7 @@ const logout = async () => {
         offsetLeft.value = null;
         offsetTop.value = null;
         offsetHeight.value = null;
+        token.value = null;
         reloadNuxtApp({
             path: '/',
             force: true

@@ -46,7 +46,7 @@ const authStore: any = useAuthUserStore();
 const top = ref(offsetTop.value ?? 5);
 const left = ref(offsetLeft.value ?? 0);
 const height = ref(offsetHeight.value ?? 0);
-const navigations: any = ref([
+const navigations = ref([
     {
         name: 'home',
         label: 'Home',
@@ -91,40 +91,40 @@ const navigate = (event: any, name: string, options: object = {}) => {
     navigateTo({ name: name, ...options })
 }
 
-if (authStore.getUser?.current_role.name.toLowerCase() == 'student') {
-    navigations.value = [
-        {
-            name: 'home',
-            label: 'Home',
-            icon: 'pi pi-home',
-            to: 'home'
-        },
-        {
-            name: 'courses',
-            label: 'Courses',
-            icon: 'pi pi-pencil',
-            to: 'course'
-        },
-        {
-            name: 'assignment',
-            label: 'Assignments',
-            icon: 'pi pi-file',
-            to: 'assignment'
-        },
-        {
-            name: 'calendar',
-            label: 'Calendar',
-            icon: 'pi pi-calendar',
-            to: 'calendar'
-        },
-        {
-            name: 'resource',
-            label: 'Resources',
-            icon: 'pi pi-book',
-            to: 'resource'
-        },
-    ]
-}
+// if (authStore.getUser?.current_role.name.toLowerCase() == 'student') {
+//     navigations.value = [
+//         {
+//             name: 'home',
+//             label: 'Home',
+//             icon: 'pi pi-home',
+//             to: 'home'
+//         },
+//         {
+//             name: 'courses',
+//             label: 'Courses',
+//             icon: 'pi pi-pencil',
+//             to: 'course'
+//         },
+//         {
+//             name: 'assignment',
+//             label: 'Assignments',
+//             icon: 'pi pi-file',
+//             to: 'assignment'
+//         },
+//         {
+//             name: 'calendar',
+//             label: 'Calendar',
+//             icon: 'pi pi-calendar',
+//             to: 'calendar'
+//         },
+//         {
+//             name: 'resource',
+//             label: 'Resources',
+//             icon: 'pi pi-book',
+//             to: 'resource'
+//         },
+//     ]
+// }
 
 </script>
 <style scoped>

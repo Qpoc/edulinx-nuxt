@@ -58,7 +58,7 @@ const login = handleSubmit(async (values) => {
         authUserStore.addUser(data.value.user);
         const admins = ['super admin', 'admin'];
         emit('login');
-        if (data.value.user.roles.find((role: any) => admins.includes(role.name.toLowerCase()))) {
+        if (admins.includes(data.value.user.current_role.name.toLowerCase())) {
             navigateTo({ name: 'admin' });
         } else {
             navigateTo({ name: 'home' });

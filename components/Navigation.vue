@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-column h-ful overflow-y-auto" style="height: 89vh;">
+    <div class="flex flex-column h-ful overflow-y-auto sticky" style="height: 89vh; top: 70px;">
         <div>
             <ul class="list-none p-3 m-0">
                 <li>
@@ -61,7 +61,8 @@ const navigate = (event: any, name: string, options: object = {}) => {
 }
 
 const evaluateNavigation = () => {
-    if (authStore.getUser?.current_role.name.toLowerCase() == 'instructor') {
+    const admins = ['super admin', 'admin'];
+    if (authStore.getUser?.current_role.name.toLowerCase() == 'instructor' || admins.includes(authStore.getUser?.current_role.name.toLowerCase())) {
         navigations.value = [
             {
                 name: 'home',

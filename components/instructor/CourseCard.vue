@@ -1,21 +1,24 @@
 <template>
     <div>
-        <Card class="w-12 shadow-2 overflow-hidden">
+        <Card
+            class="w-12 shadow-2 overflow-hidden cursor-pointer hover:surface-50"
+            style="min-height: 400px; max-height: 400px;">
             <template #header>
                 <div class="course-header">
-                    <img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" alt="">
+                    <img :src="course?.cover_photo_url ?? '~/assets/background/tutor.jpg'">
                 </div>
             </template>
             <template #title>
-                <div class="text-center">{{ course.name }}</div>
+                <div>{{ course?.name }}</div>
             </template>
             <template #subtitle>
-                <div class="text-center">Course Description</div>
+                <div class="course-subtitle" v-html="course?.description"></div>
             </template>
-            <template #footer>
-                <div class="flex justify-content-end">
-                    <Button size="small" label="View" />
-                </div>
+            <template #content>
+                <AvatarGroup>
+                    <Avatar v-for="(user, index) in course?.users" :key="index" :image="user.avatar" shape="circle" />
+                    <Avatar v-if="course?.users.length > 7" :label="`+ ${course?.users.length - 7}`" shape="circle" />
+                </AvatarGroup>
             </template>
         </Card>
     </div>
@@ -28,16 +31,30 @@ defineProps({
 </script>
 <style scoped>
 img {
-    filter: blur(3px);
+    max-height: 200px;
+    width: 100%;
     transition: 0.2s;
 }
+
 .course-header {
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 200px;
     overflow: hidden;
 }
-.course-header:hover > img {
+
+.course-header:hover>img {
     filter: blur(0);
     transform: scale(2);
     transition: 0.2s;
+}
+
+.course-subtitle {
+    display: -webkit-box;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    height: 100%;
+    overflow: hidden;
 }
 </style>

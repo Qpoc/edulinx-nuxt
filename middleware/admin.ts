@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    const authStore = useAuthUserStore();
+    const authStore:any = useAuthUserStore();
 
     if (!authStore.getUser) {
         return abortNavigation();
@@ -7,7 +7,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
     if (authStore.getUser) {
         const admins = ['admin', 'super admin'];
-        if (authStore.getUser.roles.find((role: any) => admins.includes(role.name.toLowerCase()))) {
+        if (admins.includes(authStore.getUser?.current_role?.name?.toLowerCase())) {
             return;
         }
     }

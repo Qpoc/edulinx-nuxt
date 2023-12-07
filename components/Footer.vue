@@ -12,7 +12,6 @@
 </template>
 <style scoped>
 .footer {
-   
     padding: 20px;
     text-align: center;
 }

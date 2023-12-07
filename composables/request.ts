@@ -13,7 +13,7 @@ export const useGetErrorMessage = () => {
 };
 
 export const useRequest = async (url: string, options = {}) => {
-	return useFetch(useRuntimeConfig().public.apiUrl + 'api/' + url, {
+	return useFetch(useRuntimeConfig().public.apiUrl + '/api/' + url, {
         ...options,
 		onRequest({ request, options }) {
 			// Set the request headers

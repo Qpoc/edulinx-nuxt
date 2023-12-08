@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 	css: ['primevue/resources/themes/lara-light-indigo/theme.css', 'primeflex/primeflex.css', 'primeicons/primeicons.css'],
 	runtimeConfig: {
 		public: {
-			apiUrl: process.env.API_URL,
+			apiUrl: process.env.API_URL, 
 		},
 	},
 	imports: {

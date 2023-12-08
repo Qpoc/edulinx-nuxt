@@ -5,7 +5,8 @@
             style="min-height: 400px; max-height: 400px;">
             <template #header>
                 <div class="course-header">
-                    <img :src="course?.cover_photo_url ?? '~/assets/background/tutor.jpg'">
+                    <img v-if="course?.cover_photo_url" :src="course?.cover_photo_url">
+                    <img v-else src="~/assets/background/tutor.jpg">
                 </div>
             </template>
             <template #title>

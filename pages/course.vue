@@ -4,7 +4,8 @@
             {{ course?.name }}
         </div>
         <div class="course-header">
-            <img :src="course?.cover_photo_url ?? '~/assets/background/tutor.jpg'">
+            <img v-if="course?.cover_photo_url" :src="course?.cover_photo_url">
+            <img v-else src="~/assets/background/tutor.jpg">
         </div>
         <div class="sticky bg-white" style=" position:sticky;top:69px; z-index: 999">
             <div class="flex justify-content-between align-items-center">

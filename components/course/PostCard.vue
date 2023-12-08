@@ -49,10 +49,6 @@ const users = ref([
 ]);
 
 const mention = (text: any) => {
-    const html = document.getElementById('editable').innerHTML;
-
-    document.getElementById('editable').innerHTML = html.replaceAll(`@${text.value}`, `<span class="text-primary">@${text.value}</span>&nbsp;`);
-
     
 }
 

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Dialog v-model:visible="isAddRole" modal :style="{ width: '25rem' }">
-			<template #header> Create Roles </template>
+			<template #header> Create Role </template>
 			<form @submit.prevent="submit" class="mt-3">
 				<div class="formgrid grid">
 					<div class="field col-12">
